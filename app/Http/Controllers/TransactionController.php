@@ -90,9 +90,4 @@ class TransactionController extends Controller
             throw new Exception("There was a problem processing your payment", 1);
         }
     }
-
-    public function success()
-    {
-        return "success";
-    }
 }
