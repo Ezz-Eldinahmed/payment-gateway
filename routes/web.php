@@ -13,18 +13,3 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::post('charge', [TransactionController::class, 'charge'])->name('charge');
-
-
-Route::name('stripe.')
-    ->controller(TransactionController::class)
-    ->prefix('stripe')
-    ->group(function () {
-        Route::get('payment', 'index')->name('index');
-        Route::post('payment', 'store')->name('store');
-    });
